@@ -1,0 +1,12 @@
+.truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  .w-85{
+    width: 85%;
+  }
+  .h-30{
+    height: 30rem;
+  }
