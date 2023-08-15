@@ -1,4 +1,6 @@
 import React from 'react';
+import PropertySearch from './propertySearch';
+import '../App.css'
 
 const Home = () => {
     const services = [
@@ -20,14 +22,17 @@ const Home = () => {
       ];
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 relative">
       {/* Top Section */}
       <div
-        className="bg-cover bg-center h-96"
+        className="bg-cover bg-center md"
         style={{
-          backgroundImage: 'url("https://plus.unsplash.com/premium_photo-1680721444845-66364722d019?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb3BlcnR5fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60")',
+          backgroundImage: 'url("https://images.unsplash.com/photo-1512359953714-f0c9a632ab85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb3BlcnR5fGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60")',
         }}
-      ></div>
+        
+      >
+        <PropertySearch />
+      </div>
 
    
       {/* Property Information Section */}
