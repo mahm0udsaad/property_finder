@@ -31,11 +31,15 @@ const Navbar = () => {
           )}
         </div>
         <div className="flex items-center w-full sm:w-1/4 space-x-4">
-          <img
-            src={profile && profile.picture}
+         {profile ? (
+            <img
+            src={profile.picture}
             alt="User"
             className="w-10 h-10 rounded-full"
           />
+          ):(
+            ''
+          )}
           <input
             type="text"
             placeholder="Search properties"
