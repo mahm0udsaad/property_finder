@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropertySearch from './propertySearch';
 import '../App.css'
 
 const Home = () => {
+  const [profile , setProfile] = useState({})
+  
     const services = [
         {
           title: 'Find Properties',
