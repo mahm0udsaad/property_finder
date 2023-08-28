@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Google from './google';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+import { SimpleContext } from '../context';
 
 const clientId = '556177030262-19g1vli1979i99kjkuvosl1trqqlq9h0.apps.googleusercontent.com';
 
 function GoogleLoginPage() {
         const [user, setUser] = useState({});
-        const [profile, setProfile] = useState({});
+        const {profile ,setProfile} = useContext(SimpleContext)
+
       
         useEffect(() => {
           // Load profile data from localStorage on component mount
@@ -16,7 +18,6 @@ function GoogleLoginPage() {
           const profileInfo = JSON.parse(storedProfile)
           if (profileInfo) {
             setProfile(profileInfo);
-            console.log(profileInfo);
           }else{
             setProfile(null)
           }

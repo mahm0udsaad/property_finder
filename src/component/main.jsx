@@ -1,29 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useContext} from 'react';
 import axios from 'axios';
 import PropertyCard from './propertyCard';
+import { SimpleContext } from '../context';
+import FixedPropertySearch from './fixedSearchBar';
 
 
 const Main = () => {
-  const [properties, setProperties] = useState([]);
   const [isLoading ,setIsLoading] = useState(false)
+  const { propertiesType ,type , properties , setProperties ,notFound} = useContext(SimpleContext);
+
 
   useEffect(() => {
-      axios.get('https://getproperties-api.onrender.com/properties')
+     if(type){
+      axios.get(`https://getproperties-api.onrender.com/for-${type}-properties/${propertiesType}`)
       .then(response => {
         setProperties(response.data)
         setIsLoading(true)
     })
       .catch(error => console.error(error));
-      console.log(properties);
-  }, []);
+     }
+  }, [type]);
   return (
     <>
-      <div className="min-h-screen  bg-gray-100 py-10">
+      <div className="min-h-screen  bg-gray-100">
+        <FixedPropertySearch />
        {isLoading ? (
-         <div className="w-85 mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
-         {properties.map(property => (
-           <PropertyCard key={property.id} property={property} />
-         ))}
+         <div className="w-full md:w-85 lg:w-85 lg:mx-auto lg:px-4 grid grid-cols-1  gap-6">
+         {notFound? (
+         <div className="container h-screen flex flex-col justify-center items-center">
+           <h1>404 not found</h1>
+         </div>
+         ):
+         (
+          properties.map(property => (
+            <PropertyCard key={property.id} property={property} />
+          ))
+         )}
        </div>
        ):(
         <div className="flex justify-center items-center h-screen">

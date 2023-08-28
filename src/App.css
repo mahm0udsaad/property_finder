@@ -4,6 +4,9 @@
     text-overflow: ellipsis;
     max-width: 100%;
   }
+  .filter-item{
+    margin-left: 2.5px;
+  }
   .w-85{
     width: 85%;
   }
@@ -20,11 +23,14 @@
     width: 85% !important;
   }
   @media (max-width: 767px) {
+    .card{
+      height: 102%;
+    }
     .search{
       margin-bottom: 50%;
       }
     .md{
-    height: 65vh;
+    height: 44vh;
    }
    .nav-bar{
     width: 95% !important;

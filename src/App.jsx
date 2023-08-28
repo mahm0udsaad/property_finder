@@ -9,6 +9,7 @@ import Home from './component/home';
 import OnWork from './component/onWork';
 import GoogleLoginPage from './component/googleAuth';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import PropertyForm from './component/propertyForm';
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
           <Router>
         <Navbar />
           <Routes>
+            <Route path='/createAD' element={<PropertyForm />} />
             <Route path='/login' element={<GoogleLoginPage />} />
             <Route path='/' element={<Home />} />
             <Route path='/stillOnWork' element={<OnWork />} />
