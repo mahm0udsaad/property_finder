@@ -35,11 +35,11 @@ const PropertyPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10">
     {isLoading ? (
-      <div className="bg-white shadow-md rounded-lg p-6 lg:flex">
-        <div className="w-full lg:w-2/3">
+      <div className="bg-white shadow-md rounded-lg p-6 lg:flex lg:justify-between">
+        <div className="w-full lg:w-3/5">
           <img src={property.imgSrc} alt={property.title} className="mx-auto w-full mb-4" />
         </div>
-        <div className="w-full mx-auto block lg:w-1/3 lg:ml-4">
+        <div className="w-full mx-auto block lg:w-1/3 ">
           <div className="bg-gray-100 p-4 rounded-lg">
           <div className="mx-auto">
            <h2 className="text-2xl font-semibold mb-2">{property.title}</h2>

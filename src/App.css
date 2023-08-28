@@ -23,9 +23,6 @@
     width: 85% !important;
   }
   @media (max-width: 767px) {
-    .card{
-      height: 102%;
-    }
     .search{
       margin-bottom: 50%;
       }

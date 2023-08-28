@@ -124,7 +124,7 @@ const sendFilters = async (filters) => {
       </div>
 
         {showPriceFilter ? (
-          <div className="flex space-x-2 absolute top-32 right-0 bg-white">
+          <div className="flex space-x-2 absolute top-32 right-0 lg:top-12 lg:right-2/4 bg-white">
           <div className="relative flex flex-col justify-center items-center">
             <label htmlFor="minPrice">Min Price</label>
             <select

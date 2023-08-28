@@ -25,16 +25,19 @@ const Main = () => {
       <div className="min-h-screen  bg-gray-100">
         <FixedPropertySearch />
        {isLoading ? (
-         <div className="w-full md:w-85 lg:w-85 lg:mx-auto lg:px-4 grid grid-cols-1  gap-6">
+         <div className="w-full md:w-85 lg:w-85 lg:mx-auto lg:px-4 grid grid-cols-1 gap-5 lg:gap-2">
          {notFound? (
          <div className="container h-screen flex flex-col justify-center items-center">
            <h1>404 not found</h1>
          </div>
          ):
          (
-          properties.map(property => (
-            <PropertyCard key={property.id} property={property} />
-          ))
+          <div className="container">
+            <h1 className='text-2xl lg:mx-5 lg:my-10 mx-1 my-5'>{properties[0].type} for {type} in Egypt</h1>
+            {properties.map(property => (
+             <PropertyCard key={property.id} property={property} />
+          ))}
+          </div>
          )}
        </div>
        ):(
