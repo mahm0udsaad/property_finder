@@ -31,13 +31,9 @@ const Home = () => {
         style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1512359953714-f0c9a632ab85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb3BlcnR5fGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60")',
         }}
-        
       >
         <PropertySearch />
       </div>
-
-   
-      {/* Property Information Section */}
       <div className="container mx-auto mt-8 px-4 md:px-0" style={{ maxWidth: '85%' }}>
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
           {services.map((service, index) => (

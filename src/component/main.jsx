@@ -14,6 +14,7 @@ const Main = () => {
      if(type){
       axios.get(`https://getproperties-api.onrender.com/for-${type}-properties/${propertiesType}`)
       .then(response => {
+        console.log(propertiesType);
         setProperties(response.data)
         setIsLoading(true)
     })

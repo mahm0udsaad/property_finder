@@ -20,7 +20,10 @@ const PropertyCard = ({ property }) => {
        <img src={property.imgSrc} alt={property.name} className="h-full w-full" />
        </div>
        <div className="wrapper relative m-4 md:w-7/12  lg:h-full">
+       <div className="flex w-full justify-between">
       <p className="truncate text-xs text-gray-500">{property.type}</p>
+       <p className='truncate text-xs text-gray-500'>{property.date}</p>
+       </div>
        <p className='text-lg font-semibold'>Price: {formatedPrice(property.price)} EG{type === 'rent'? '/month':'' }</p>
        <h2 className="text-gray-500">
               {property.title}
